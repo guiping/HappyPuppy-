@@ -23,7 +23,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
-t
+
 import android.os.Bundle
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
@@ -80,8 +80,7 @@ class DogDetailInfoActivity : AppCompatActivity() {
                     )
                 }
             ) {
-
-                puppyInfo1(dog as PuppyEntity)
+                puppyInfo(dog)
             }
         }
     }
@@ -96,7 +95,7 @@ class DogDetailInfoActivity : AppCompatActivity() {
 }
 
 @Composable
-fun puppyInfo1(puppyEntity: PuppyEntity) {
+fun puppyInfo(puppyEntity: PuppyEntity) {
     val typography = MaterialTheme.typography
     val stateDog by remember { mutableStateOf(puppyEntity) }
     Column{
@@ -186,15 +185,4 @@ fun AdoptConfirmDialog(puppyEntity: PuppyEntity) {
             }
         }
     )
-}
-
-@Composable
-fun Greeting1(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview
-@Composable
-fun PreviewGreeting() {
-    Greeting1(name = "nihao shijie")
 }
