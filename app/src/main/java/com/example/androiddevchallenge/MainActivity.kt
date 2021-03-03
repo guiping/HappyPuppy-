@@ -62,10 +62,8 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-    lateinit var activity: Activity;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        activity = this
         setContent {
             MyTheme {
                 MyApp(onClick = {
@@ -107,11 +105,9 @@ fun MyApp(onClick: (puppy: PuppyEntity) -> Unit) {
     val puppyInfo = stringArrayResource(id = R.array.puppy_info)
     val puppyList = mutableListOf<PuppyEntity>()  //创建一个可变数组
 
-    var puppyId: Int = 0
-    for (imgId in puppyImg) {
+    for ((puppyId, imgId) in puppyImg.withIndex()) {
         val itemPuppy = PuppyEntity()
         itemPuppy.puppyId = puppyId
-        puppyId++
         itemPuppy.puppyImg = imgId
         puppyList.add(itemPuppy)
     }
