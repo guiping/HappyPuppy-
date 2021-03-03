@@ -84,7 +84,7 @@ class DogDetailInfoActivity : AppCompatActivity() {
 fun puppyInfo1(puppyEntity: PuppyEntity) {
     val typography = MaterialTheme.typography
     val stateDog by remember { mutableStateOf(puppyEntity) }
-    Column {
+    Column{
         val imageModifier = Modifier
             .wrapContentHeight()
             .padding(10.dp)
